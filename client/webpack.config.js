@@ -14,7 +14,12 @@ module.exports = () => {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist'),
     },
-    plugins: [
+      devServer: {
+      host: '0.0.0.0',
+      port: process.env.PORT || 3000,
+      allowedHosts: ['all']  
+    },
+        plugins: [
       new HtmlWebpackPlugin({
         template: './index.html',
         title: 'JATE'
